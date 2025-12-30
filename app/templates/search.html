@@ -1,0 +1,10 @@
+<form hx-get="/api/search" hx-target="#results">
+  <input name="query" placeholder="検索..." />
+  <select name="status">
+    <option value="active">進行中</option>
+    <option value="completed">完了</option>
+  </select>
+  <button type="submit">検索</button>
+</form>
+
+<div id="results"></div>
