@@ -1,5 +1,17 @@
 <ul>
   {% for c in conversations %}
-    <li>{{ c }}</li>
+    <li>
+      {{ c.text }} ({{ c.timestamp }})
+      <button
+        hx-post="/api/conversations/{{ c.id }}/delete"
+        hx-target="#conversation-list"
+        hx-swap="innerHTML"
+        type="button"
+      >
+        削除
+      </button>
+    </li>
+  {% else %}
+    <li>該当なし</li>
   {% endfor %}
 </ul>
